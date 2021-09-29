@@ -21,40 +21,44 @@ function draw() {
 }
 
 function select(className) {
-  switch (className) {
-    case "btn-adduser-push":
-      userlist.push(input.value), draw();
-      break;
-    case "btn-adduser-unshift":
-      userlist.unshift(input.value), draw();
-      break;
-    case "btn-adduser-shift":
-      userlist.shift(), draw();
-      break;
-    case "btn-adduser-pop":
-      userlist.pop(), draw();
-      break;
-    case "btn-reverse":
-      userlist.reverse(), draw();
-      break;
-    case "btn-splice-remove":
-      if (delnum.value == 0) {
-        delnum.value = 1;
-      }
-      userlist.splice(start.value, delnum.value), draw();
-      break;
-    case "btn-splice-add":
-      userlist.splice(start.value, delnum.value, input.value), draw();
-      break;
-    case "moveUp":
-      let b = userlist.shift();
-      userlist.push(b), draw();
-      break;
-    case "moveDown":
-      let a = userlist.pop();
-      userlist.unshift(a), draw();
-      break;
-    default:
+  if (input.value != null && input.value != "") {
+    userlist.push(input.value);
+
+    switch (className) {
+      case "btn-adduser-push":
+        break;
+      case "btn-adduser-unshift":
+        userlist.unshift(input.value);
+        break;
+      case "btn-adduser-shift":
+        userlist.shift();
+        break;
+      case "btn-adduser-pop":
+        userlist.pop();
+        break;
+      case "btn-reverse":
+        userlist.reverse();
+        break;
+      case "btn-splice-remove":
+        if (delnum.value == 0) {
+          delnum.value = 1;
+        }
+        userlist.splice(start.value - 1, delnum.value);
+        break;
+      case "btn-splice-add":
+        userlist.splice(start.value - 1, delnum.value, input.value);
+        break;
+      case "moveUp":
+        let b = userlist.shift();
+        userlist.push(b);
+        break;
+      case "moveDown":
+        let a = userlist.pop();
+        userlist.unshift(a);
+        break;
+      default:
+    }
+    draw();
   }
 }
 let buttons = document.querySelector("body");
