@@ -8,14 +8,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <label for="user">Vardas Pavardė</label>
-    <input type="text" name="user" class="name" />
+    <section>
+      <label for="user">Vardas Pavardė</label>
+      <input type="text" name="user" class="name" />
+      <button class="btn-adduser-push">Add name - push</button>
+      <button class="btn-adduser-unshift">Add name - unshift</button>
+      <button class="btn-adduser-shift">Remove name - shift</button>
+      <button class="btn-adduser-pop">Remove name - pop</button>
+      <button class="btn-reverse">Reverse</button>
+    </section>
+    <section>
+      <label for="start">Nuo:</label>
+      <input type="number" name="start" class="start" />
+      <label for="delnum">Istrinti kiek:</label>
+      <input type="number" name="delnum" class="delnum" />
+      <button class="btn-splice-remove">Splice remove</button>
+      <button class="btn-splice-add">Splice add</button>
+      <label for="sort">Sort by:</label>
+      <button class="moveUp">To bottom</button>
+      <button class="moveDown">To top</button>
+    </section>
 
-    <button class="btn-adduser-push">Add name - push</button>
-    <button class="btn-adduser-unshift">Add name - unshift</button>
-    <button class="btn-adduser-shift">Remove name - shift</button>
-    <button class="btn-adduser-pop">Remove name - pop</button>
-    <button class="btn-reverse">Reverse</button>
     <section class="output"></section>
     <script src="index.js"></script>
   </body>
