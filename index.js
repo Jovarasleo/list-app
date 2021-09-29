@@ -5,11 +5,11 @@ let input = document.querySelector(".name");
 const result = document.querySelector("body");
 
 function draw() {
-  const maxresult =
+  const resultSection =
     document.querySelector(".output") || document.createElement("section");
-  maxresult.classList.add("output");
-  if (typeof (maxresult == "undefined" && maxresult == null)) {
-    maxresult.innerHTML = null;
+  resultSection.classList.add("output");
+  if (typeof (resultSection == "undefined" && resultSection == null)) {
+    resultSection.innerHTML = null;
     let element = document.querySelector(".mystyle");
     if (typeof (element == "undefined" && element == null)) {
       let newol = document.createElement("ol");
@@ -19,8 +19,8 @@ function draw() {
         let text = document.createTextNode(userlist[i]);
         newol.appendChild(newli);
         newli.appendChild(text);
-        maxresult.appendChild(newol);
-        result.appendChild(maxresult);
+        resultSection.appendChild(newol);
+        result.appendChild(resultSection);
       }
     }
   }
