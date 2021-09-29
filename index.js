@@ -7,8 +7,8 @@ const result = document.querySelector("body");
 function draw() {
   const maxresult =
     document.querySelector(".output") || document.createElement("section");
+  maxresult.classList.add("output");
   if (typeof (maxresult == "undefined" && maxresult == null)) {
-    maxresult.classList.add("output");
     maxresult.innerHTML = null;
     let element = document.querySelector(".mystyle");
     if (typeof (element == "undefined" && element == null)) {
