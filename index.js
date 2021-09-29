@@ -22,10 +22,9 @@ function draw() {
 
 function select(className) {
   if (input.value != null && input.value != "") {
-    userlist.push(input.value);
-
     switch (className) {
       case "btn-adduser-push":
+        userlist.push(input.value);
         break;
       case "btn-adduser-unshift":
         userlist.unshift(input.value);
