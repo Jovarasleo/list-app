@@ -57,9 +57,27 @@ document.querySelector("body").addEventListener("click", (event) => {
           let b = userlist.shift();
           userlist.push(b);
           break;
-        case "moveDown":
-          let a = userlist.pop();
-          userlist.unshift(a);
+        case "sortAz":
+          userlist.sort(function (a, b) {
+            if (a < b) {
+              return -1;
+            }
+            if (a > b) {
+              return 1;
+            }
+            return 0;
+          });
+          break;
+        case "sortZa":
+          userlist.sort(function (a, b) {
+            if (a > b) {
+              return -1;
+            }
+            if (a < b) {
+              return 1;
+            }
+            return 0;
+          });
           break;
         default:
           break;
