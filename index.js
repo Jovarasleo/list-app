@@ -59,24 +59,12 @@ document.querySelector("body").addEventListener("click", (event) => {
           break;
         case "sortAz":
           userlist.sort(function (a, b) {
-            if (a < b) {
-              return -1;
-            }
-            if (a > b) {
-              return 1;
-            }
-            return 0;
+            return a.localeCompare(b);
           });
           break;
         case "sortZa":
           userlist.sort(function (a, b) {
-            if (a > b) {
-              return -1;
-            }
-            if (a < b) {
-              return 1;
-            }
-            return 0;
+            return b.localeCompare(a);
           });
           break;
         default:
